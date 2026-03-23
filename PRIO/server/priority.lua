@@ -1,8 +1,6 @@
--- Initialize priorities based on config
 local priorities = {}
 local playerCooldowns = {}
 
--- Initialize zones
 for zone, data in pairs(Config.Zones) do
     priorities[zone] = { 
         status = data.defaultStatus, 
@@ -10,7 +8,6 @@ for zone, data in pairs(Config.Zones) do
     }
 end
 
--- Function to add new zone during runtime (optional)
 function AddNewZone(zoneName, label)
     if not Config.Zones[zoneName] then
         Config.Zones[zoneName] = {
@@ -27,7 +24,6 @@ function AddNewZone(zoneName, label)
     return false
 end
 
--- Function to check if zone exists
 local function zoneExists(location)
     return priorities[location] ~= nil
 end
@@ -59,10 +55,8 @@ end
     updatePriorityStatus('prison', 'Available', 0)  -- Reset to available
 ]]
 
--- Configuration
-local webhookUrl = Config.Webhook.url -- Place Your Webhook URL Here
+local webhookUrl = Config.Webhook.url 
 
--- Add your Discord user IDs here (can add multiple)
 local discordIDs = {
     ['license:1234567890abcdef'] = '123456789012345678' -- Outdated Not needed anymore
 }
