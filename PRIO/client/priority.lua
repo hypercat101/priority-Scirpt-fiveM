@@ -113,7 +113,6 @@ AddEventHandler('priority:showDialog', function(action)
     end
 end)
 
--- Basic notification without custom styling
 RegisterNetEvent('priority:updateStatus')
 AddEventHandler('priority:updateStatus', function(location, status, cooldown)
     if priorities[location] then
